@@ -10,7 +10,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Udacity First App',
-      home: CategoryRoute(),
+      home: CategoryScreen(),
     ),
   );
 }

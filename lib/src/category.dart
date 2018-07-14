@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hello_rectangle/src/unit.dart';
 
-class CategoryRoute extends StatelessWidget {
-
-  // dev vars 
+class CategoryScreen extends StatelessWidget {
+  // dev vars
   final List<Category> _categories = [
     Category(
         icon: IconData(0xe41c, fontFamily: 'MaterialIcons'), label: "Length"),
@@ -19,15 +19,15 @@ class CategoryRoute extends StatelessWidget {
         label: "Digital Storage"),
   ];
 
-  Widget _catagoriesListView(BuildContext context){
+  Widget _catagoriesListView(BuildContext context) {
     EdgeInsets topBottomPadding = new EdgeInsets.only(top: 15.0, bottom: 15.0);
-    if (MediaQuery.of(context).orientation == Orientation.portrait){
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
       return ListView.builder(
         itemBuilder: (context, index) => _categories[index],
         itemCount: _categories.length,
         padding: topBottomPadding,
       );
-    }else{
+    } else {
       return GridView.count(
         crossAxisCount: 2,
         childAspectRatio: 3.0,
@@ -40,19 +40,18 @@ class CategoryRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // app bar
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Unit Converter',
-            textAlign: TextAlign.center,
-            textScaleFactor: 2.0,
+        // app bar
+        appBar: AppBar(
+          title: Center(
+            child: Text(
+              'Unit Converter',
+              textAlign: TextAlign.center,
+              textScaleFactor: 1.5,
+            ),
           ),
+          backgroundColor: Colors.green,
         ),
-        backgroundColor: Colors.green,
-      ),
-      body: _catagoriesListView(context)
-    );
+        body: _catagoriesListView(context));
   }
 }
 
@@ -61,12 +60,14 @@ class Category extends StatelessWidget {
   const Category({
     this.label,
     this.icon,
+    // this.onTapFunction,
   });
 
   //instances
   final double fontSize = 24.0;
   final String label;
   final IconData icon;
+  // final onTapFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +85,11 @@ class Category extends StatelessWidget {
         // animation
         child: InkWell(
           onTap: () {
-            print("catagory button is clicked");
+            print("button is clicked");
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => UnitScreen(title: label)));
           },
           splashColor: Colors.green,
 
