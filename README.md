@@ -1,4 +1,4 @@
-# hello_rectangle
+# Unit Converter
 
 A new Flutter project.
 
