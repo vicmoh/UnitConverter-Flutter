@@ -21,7 +21,6 @@ class Category extends StatelessWidget {
       ),
       height: 100.0,
       margin: EdgeInsets.all(10.0),
-
       child: Material(
         borderRadius: BorderRadius.all(Radius.circular(90.0)),
         color: Colors.transparent,
@@ -37,12 +36,11 @@ class Category extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(left: 20.0, right: 15.0),
-                child: Icon(
-                  icon,
-                  size: 60.0,
-                )
-              ),
+                  padding: EdgeInsets.only(left: 20.0, right: 15.0),
+                  child: Icon(
+                    icon,
+                    size: 60.0,
+                  )),
               Container(
                 child: Text(label, textScaleFactor: 2.0),
                 padding: EdgeInsets.only(left: 1.0),
