@@ -4,11 +4,13 @@ class Category extends StatelessWidget {
   //constructors
   const Category({
     this.label,
+    this.icon,
   });
 
   //instances
   final double fontSize = 24.0;
   final String label;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +37,12 @@ class Category extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: Icon(
-                    IconData(0xeb3b, fontFamily: 'MaterialIcons'),
-                    size: 60.0,
-                  )),
+                padding: EdgeInsets.only(left: 20.0, right: 15.0),
+                child: Icon(
+                  icon,
+                  size: 60.0,
+                )
+              ),
               Container(
                 child: Text(label, textScaleFactor: 2.0),
                 padding: EdgeInsets.only(left: 1.0),
