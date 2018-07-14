@@ -26,7 +26,8 @@ class UnitInputContainer extends StatefulWidget {
 }
 
 class UnitInputContainerState extends State<UnitInputContainer> {
-  final TextEditingController _inputController = TextEditingController();
+  TextEditingController _inputController = TextEditingController();
+  TextEditingController _outputController = TextEditingController();
 
   Widget buttonWidget(){
     return Container(
@@ -35,31 +36,29 @@ class UnitInputContainerState extends State<UnitInputContainer> {
         padding: EdgeInsets.only(top: 10.0, bottom: 10.0, right: 40.0, left: 40.0),
         child: Text("Submit", textScaleFactor: 2.0),
         onPressed: (){
-          _inputController.text = "yee";
+          _outputController.text = "It Worked! " + _inputController.text;
         },
       ),
     );
   }
 
-  Widget inputWidget(String label, {String value}) {
-    if (value != null) {
-      _inputController.text = value;
+  Widget inputWidget(String label, {TextEditingController controller}) {
+    if (controller != null) {
+      controller.text = controller.text;
     }
     return Container(
-      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-      margin: EdgeInsets.all(30.0),
+      margin: EdgeInsets.only(left: 30.0, right: 30.0),
       child: TextField(
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 30.0,
           color: Colors.black,
         ),
-        controller: _inputController,
+        controller: controller,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           labelText: label,
           labelStyle: TextStyle(fontSize: 25.0),
-          contentPadding: EdgeInsets.all(20.0),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),
             gapPadding: 4.0,
@@ -73,8 +72,11 @@ class UnitInputContainerState extends State<UnitInputContainer> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        inputWidget("Enter Number"),
-        inputWidget("Result", value: _inputController.text),
+        Container(padding: EdgeInsets.only(bottom: 20.0)),
+        inputWidget("Enter Number", controller:  _inputController),
+        Container(padding: EdgeInsets.only(bottom: 20.0)),
+        inputWidget("Result", controller: _outputController),
+        Container(padding: EdgeInsets.only(bottom: 20.0)),
         buttonWidget(),
       ],
     );
