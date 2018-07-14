@@ -12,19 +12,24 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        print("catagory button is clicked");
-      },
-      // object of the button
-      child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(90.0)),
-            color: Colors.greenAccent,
-          ),
-          height: 100.0,
-          padding: EdgeInsets.all(8.0),
-          margin: EdgeInsets.all(10.0),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(90.0)),
+        color: Colors.greenAccent,
+      ),
+      height: 100.0,
+      margin: EdgeInsets.all(10.0),
+
+      child: Material(
+        borderRadius: BorderRadius.all(Radius.circular(90.0)),
+        color: Colors.transparent,
+
+        // animation
+        child: InkWell(
+          onTap: () {
+            print("catagory button is clicked 2");
+          },
+          splashColor: Colors.green,
 
           // font and icon
           child: Row(
@@ -40,7 +45,9 @@ class Category extends StatelessWidget {
                 padding: EdgeInsets.only(left: 1.0),
               ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

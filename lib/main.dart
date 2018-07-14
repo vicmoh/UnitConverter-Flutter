@@ -23,7 +23,7 @@ void main() {
               children: <Widget>[
                 Category(label: "Snow"),
                 Category(label: "Second one"),
-                Category(label: "please work"),
+                Category(label: "Please work"),
               ],
             ),
           ),

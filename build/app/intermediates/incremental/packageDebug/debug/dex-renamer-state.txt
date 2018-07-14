@@ -1,4 +1,4 @@
-#Sat Jul 14 05:50:02 EDT 2018
-base.0=C\:\\Users\\teddy\\GitHub\\unit-converter\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+#Sat Jul 14 11:54:55 EDT 2018
+base.0=C\:\\Users\\teddy\\GitHub\\UnitConverter-Flutter\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
