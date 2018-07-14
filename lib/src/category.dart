@@ -91,7 +91,7 @@ class Category extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) => UnitScreen(title: label)));
           },
-          splashColor: Colors.green,
+          splashColor: Colors.purple,
 
           // font and icon
           child: Row(
